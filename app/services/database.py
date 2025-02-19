@@ -11,8 +11,7 @@ MONGO_DB   = os.getenv("MONGO_DB", "whatsapp_bot")
 username_encoded = urllib.parse.quote_plus(MONGO_USER)
 password_encoded = urllib.parse.quote_plus(MONGO_PASS)
 
-
-MONGO_URI = f"mongodb://{username_encoded}:{password_encoded}@{MONGO_HOST}:{MONGO_PORT}/{MONGO_DB}"
+MONGO_URI = f"mongodb://{username_encoded}:{password_encoded}@{MONGO_HOST}:{MONGO_PORT}/{MONGO_DB}?authSource=admin&authMechanism=SCRAM-SHA-256"
 
 
 client = MongoClient(MONGO_URI)
