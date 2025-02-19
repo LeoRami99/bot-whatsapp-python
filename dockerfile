@@ -1,5 +1,5 @@
 ### Dockerfile (Configuración para Docker)
-FROM python:3.9
+FROM python:3.9-slim
 
 # Configuración del entorno de trabajo
 WORKDIR /app
@@ -11,7 +11,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copiar todo el código fuente al contenedor
 COPY . .
 
-# Exponer el puerto 8000
+# Exponer el puerto 1000
 EXPOSE 1000
 
 # Comando para ejecutar la aplicación
